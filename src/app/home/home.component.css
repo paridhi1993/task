@@ -1,0 +1,7 @@
+.app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    top: 50px;
+}

@@ -1,0 +1,11 @@
+<div class="app">
+        <h1 *ngIf="!name; else welcome">Dashboard Works!</h1>
+        <ng-template #welcome>
+            <h1>Welcome {{name}}</h1>
+        </ng-template>
+    <h2>
+        <a routerLink='/home'>Go to Home</a>
+    </h2>
+        <hr>
+    <app-dialog [pageName]="'Dashboard'" (userName)="getUserName($event)"></app-dialog>
+</div>

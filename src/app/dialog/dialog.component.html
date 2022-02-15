@@ -1,0 +1,23 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{pageName}} Dialog</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss(modal)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="name">Enter Your Name</label>
+        <div class="input-group">
+          <input type="text" aria-label="Enter Your Name" id="name" ngModel name="fullName" class="form-control" placeholder="Enter your name">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button aria-label="Please Save the Details" type="button" id="submit" class="btn btn-outline-dark" (click)="onSubmit(f); dismiss(modal)">Ok</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" id="show-dialog" (click)="open(content)">Show Dialog</button>
