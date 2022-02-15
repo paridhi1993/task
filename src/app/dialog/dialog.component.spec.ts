@@ -50,8 +50,13 @@ describe('DialogComponent', () => {
   });
 
   it('should emit username', () => {
-    const openModalEle= fixture.debugElement.nativeElement.querySelector('#submit');
-    openModalEle.click();
+    spyOn(component.userName,'emit').and.callThrough();
+    const testForm = <NgForm>{
+      value: {
+          fullName: "Hello World",
+      }
+    };
+    component.onSubmit(testForm);
     expect(component.userName.emit).toHaveBeenCalled();
-  })
+  });
 });

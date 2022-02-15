@@ -1,5 +1,5 @@
 import { Component, Input, Output,EventEmitter } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,11 +10,11 @@ import { NgForm } from '@angular/forms';
 export class DialogComponent {
   closeResult = '';
   fullName: string = 'Test';
-
-  constructor(private modalService: NgbModal) {}
   @Input() pageName = '';
   @Output() userName = new EventEmitter<string>();
 
+  constructor(private modalService: NgbModal) {}
+  
   open(content:  any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
   }
