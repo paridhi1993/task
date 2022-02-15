@@ -19,7 +19,6 @@ describe('DialogComponent', () => {
   let component: DialogComponent;
   let fixture: ComponentFixture<DialogComponent>;
   let modalService: NgbModal;
-  let mockModalRef: MockNgbModalRef = new MockNgbModalRef();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

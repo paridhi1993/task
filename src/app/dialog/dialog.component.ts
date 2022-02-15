@@ -12,15 +12,16 @@ export class DialogComponent {
   fullName: string = 'Test';
   @Input() pageName = '';
   @Output() userName = new EventEmitter<string>();
+  modalRef!: NgbModalRef;
 
   constructor(private modalService: NgbModal) {}
   
   open(content:  any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    this.modalRef = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
   }
 
-  dismiss(modal: any) {
-    modal.dismiss();
+  dismiss() {
+    this.modalRef.close();
   }
 
   onSubmit(f: NgForm) {
